@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AI-Native Marketing Site Pilot
+
+This repository contains a 5-page marketing site pilot built with Next.js and deployed on Vercel. The goal is to ship a production-ready site in one week while validating an AI-native engineering workflow.
+
+## Project Scope
+- Pages: Home, Projects (landing + detail), About (index + Book + Entrepreneurship), Contact, Terms, Privacy
+- Footer links: LinkedIn and YouTube
+- Temporary lead capture: simple form + minimal API endpoint
+
+## Routes
+- `/` Home
+- `/projects` Projects landing
+- `/projects/[slug]` Project details
+- `/about` About index
+- `/about/book` Book
+- `/about/entrepreneurship` Entrepreneurship
+- `/contact` Contact
+- `/terms` Terms
+- `/privacy` Privacy
 
 ## Getting Started
-
-First, run the development server:
-
+1. Install dependencies:
+```bash
+npm install
+```
+2. Run the dev server:
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
+3. Open `http://localhost:3000`.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Scripts
+- `npm run dev` Start local dev server
+- `npm run build` Build for production
+- `npm run start` Run production build
+- `npm run lint` Lint the codebase
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Structure
+- `app/` App Router pages and layouts
+- `public/` Static assets
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Lead Capture
+Temporary lead capture should use a minimal API endpoint (e.g., `/api/lead`) and store submissions via email or CSV. Post-pilot, this can be replaced with a CRM integration (e.g., HubSpot).
 
-## Learn More
+## Workflow And Quality
+All contributors (human and AI) should follow the rules in `AGENTS.md`, including:
+- Small, reviewable PRs
+- Tests before implementation
+- Docs and diagrams updated in the same PR
+- Human approval for merges
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Deployment
+Vercel preview deployments are expected on every PR; production deploys on merge to `main`.
